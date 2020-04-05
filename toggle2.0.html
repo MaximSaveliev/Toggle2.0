@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Toggle 2.0</title>
+    <style>
+        .switch-1{
+          position: relative;
+          display: block;
+          width: 60px;
+          height: 34px;
+          margin: 15px;
+        }
+
+        .switch-2{
+          position: relative;
+          display: block;
+          width: 34px;
+          height: 60px;
+          margin: 15px;
+        }
+
+        .switch-3{
+          position: relative;
+          display: block;
+          width: 60px;
+          height: 34px;
+          margin: 25px 15px 25px 2px;
+        }
+        
+        .switch-1 input,.switch-2 input,.switch-3 input { 
+          opacity: 0;
+          width: 0;
+          height: 0;
+        }
+        
+        .slider-1,.slider-2,.slider-3 {
+          position: absolute;
+          cursor: pointer;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: #ccc;
+        }
+
+        .slider-3{
+          transform: rotate(-90deg);
+        }
+        
+        .slider-1:before,.slider-2:before,.slider-3:before {
+          position: absolute;
+          content: "";
+          height: 26px;
+          width: 26px;
+          left: 4px;
+          bottom: 4px;
+          background-color: white;
+        }
+        
+        input:checked + .slider-1,input:checked + .slider-2,input:checked + .slider-3 {
+          background-color: rgb(57, 201, 57);
+        }
+        
+        input:checked + .slider-1:before,input:checked + .slider-3:before{
+          transform: translateX(26px);
+        }
+
+        input:checked + .slider-2:before{
+          transform: translateY(-26px);
+        }
+        
+        /* Rounded sliders */
+        .slider-1.round,.slider-2.round,.slider-3.round {
+          border-radius: 34px;
+        }
+        
+        .slider-1.round:before,.slider-2.round:before,.slider-3.round:before {
+          border-radius: 50%;
+        }
+
+        .rotate-1{
+          width: 34px;
+          height: 60px;
+          margin: 55px 30px 0px 28px;
+          transform:rotate(-90deg);
+        }
+        </style>
+</head>
+<body>
+    <form action="">
+      <label class="switch-1">
+        <input type="checkbox">
+        <span class="slider-1 round"></span>
+      </label>
+      <label class="switch-2">
+        <input type="checkbox">
+        <span class="slider-2 round"></span>
+      </label>
+      <label class="switch-3">
+        <input type="checkbox">
+        <span class="slider-3 round"></span>
+      </label>
+      <div class="rotate-1">
+      <label class="switch-1">
+        <input type="checkbox">
+        <span class="slider-1 round"></span>
+      </label>
+      </div>
+    </form>
+</body>
+</html>
